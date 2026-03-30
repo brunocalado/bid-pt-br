@@ -3,7 +3,7 @@
 
 # Como Usar
 
-- Instale o módulo babele e esse módulo.
+- Instale o módulo babele e esse módulo pela sua página oficial do FoundryVTT - https://foundryvtt.com/packages/bid-pt-br
 - Ative ambos.
 - Altere o idioma em configurações para Português (Brasil)
 

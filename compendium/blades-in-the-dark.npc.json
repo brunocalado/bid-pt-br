@@ -3,7 +3,10 @@
   "mapping": {
     "name": "name",
     "description": "system.description_short",
-    "long_description": "system.description"
+    "long_description": "system.description",
+    "playbook": "system.associated_class",
+    "crew": "system.associated_crew_type",
+    "faction": "system.associated_faction"
   },
   "folders": {},
   "entries": {
@@ -11,49 +14,57 @@
       "name": "Roslyn Kellis",
       "tokenName": "Roslyn Kellis",
       "description": "aristocrata",
-      "long_description": ""
+      "long_description": "",
+      "playbook": "Furtivo"
     },
     "0c2iOYT6dnwTyWpP": {
       "name": "Bryl",
       "tokenName": "Bryl",
       "description": "traficante",
-      "long_description": ""
+      "long_description": "",
+      "playbook": "Suave"
     },
     "0dqDU68OAo3b4kVo": {
       "name": "Marlo",
       "tokenName": "Marlo",
       "description": "chefe de gangue",
-      "long_description": ""
+      "long_description": "",
+      "crew": "Mascates"
     },
     "0iQxdTXoETXFbJG9": {
       "name": "Jennah",
       "tokenName": "Jennah",
       "description": "camareira",
-      "long_description": ""
+      "long_description": "",
+      "playbook": "Aranha"
     },
     "0zM5aJkLXJIIymsx": {
       "name": "Setarra",
       "tokenName": "Setarra",
       "description": "demônio",
-      "long_description": ""
+      "long_description": "",
+      "playbook": "Sussurro"
     },
     "1gzpJBEG7Wu7PQZK": {
       "name": "Klyra",
       "tokenName": "Klyra",
       "description": "dona de taverna",
-      "long_description": ""
+      "long_description": "",
+      "playbook": "Suave"
     },
     "1v3mJmkKonLtJFMq": {
       "name": "Dowler",
       "tokenName": "Dowler",
       "description": "explorador",
-      "long_description": ""
+      "long_description": "",
+      "crew": "Sombras"
     },
     "2VuLIj4Z8elDAXwN": {
       "name": "Nyryx",
       "tokenName": "Nyryx",
       "description": "prostituto(a)",
-      "long_description": ""
+      "long_description": "Fantasma trapaceiro que possui o corpo de prostitutas. Busca um Sussurro para servir.",
+      "playbook": "Sussurro"
     },
     "2tLWJkQKO7WUkmsh": {
       "name": "Grull",
@@ -65,31 +76,36 @@
       "name": "Anya",
       "tokenName": "Anya",
       "description": "diletante",
-      "long_description": ""
+      "long_description": "",
+      "crew": "Mascates"
     },
     "4NyIdaeb3WXzzF8Y": {
       "name": "Lutes",
       "tokenName": "Lutes",
       "description": "dono de taverna",
-      "long_description": ""
+      "long_description": "",
+      "crew": "Bravos"
     },
     "5ShKuFoaI9Bj07u3": {
       "name": "Walker",
       "tokenName": "Walker",
       "description": "chefe do bairro",
-      "long_description": ""
+      "long_description": "",
+      "crew": "Bravos"
     },
     "5Zs4L0FD9aDh8Aks": {
       "name": "Jul",
       "tokenName": "Jul",
       "description": "traficante de sangue",
-      "long_description": ""
+      "long_description": "",
+      "playbook": "Doutor"
     },
     "5mS0X3Kn52xhnv8O": {
       "name": "Elynn",
       "tokenName": "Elynn",
       "description": "tabeliã das docas",
-      "long_description": ""
+      "long_description": "",
+      "crew": "Contrabandistas"
     },
     "618tZppqt7Vti8UG": {
       "name": "Elstera Avrathi",
@@ -101,7 +117,8 @@
       "name": "Marlane",
       "tokenName": "Marlane",
       "description": "pugilista",
-      "long_description": ""
+      "long_description": "",
+      "playbook": "Retalhador"
     },
     "6EzDG4jPx6mDWgFL": {
       "name": "Brynna Skyrkallan",
@@ -113,25 +130,29 @@
       "name": "Keller",
       "tokenName": "Keller",
       "description": "ferreiro",
-      "long_description": ""
+      "long_description": "",
+      "crew": "Bravos"
     },
     "70n7J94dCEDzteY6": {
       "name": "Sevoy",
       "tokenName": "Sevoy",
       "description": "lorde mercantil",
-      "long_description": ""
+      "long_description": "",
+      "crew": "Assassinos"
     },
     "7gADzdqKREm9PeOr": {
       "name": "Malista",
       "tokenName": "Malista",
       "description": "sacerdotisa",
-      "long_description": ""
+      "long_description": "",
+      "playbook": "Doutor"
     },
     "85NbHF5VR9XZUII7": {
       "name": "Moriya",
       "tokenName": "Moriya",
       "description": "traficante de espíritos",
-      "long_description": ""
+      "long_description": "",
+      "crew": "Culto"
     },
     "8DGnUGMorYWXcUVV": {
       "name": "Denkirk Sol",
@@ -143,7 +164,8 @@
       "name": "Otto",
       "tokenName": "Otto",
       "description": "cocheiro",
-      "long_description": ""
+      "long_description": "",
+      "playbook": "Vampiro"
     },
     "CB6nordTDnVkCn3q": {
       "name": "Mordis",
@@ -161,13 +183,15 @@
       "name": "Augus",
       "tokenName": "Augus",
       "description": "mestre arquiteto",
-      "long_description": ""
+      "long_description": "",
+      "playbook": "Aranha"
     },
     "Dv29btX5yhOkX8Pu": {
       "name": "Chael",
       "tokenName": "Chael",
       "description": "bandido cruel",
-      "long_description": ""
+      "long_description": "",
+      "playbook": "Retalhador"
     },
     "EC8GRUiMI22icqZ7": {
       "name": "Alon Helker",
@@ -179,7 +203,8 @@
       "name": "Veldren",
       "tokenName": "Veldren",
       "description": "psiconauta",
-      "long_description": ""
+      "long_description": "",
+      "playbook": "Doutor"
     },
     "FDVzvTH7KbL0rKHF": {
       "name": "Jira",
@@ -191,37 +216,43 @@
       "name": "Harker",
       "tokenName": "Harker",
       "description": "presidiário reincidente",
-      "long_description": ""
+      "long_description": "",
+      "playbook": "Suave"
     },
     "GMEEGL4asCC42DcU": {
       "name": "Grace",
       "tokenName": "Grace",
       "description": "assaltante",
-      "long_description": ""
+      "long_description": "",
+      "playbook": "Retalhador"
     },
     "GZKmaRNMFqaoFxHw": {
       "name": "Flint",
       "tokenName": "Flint",
       "description": "traficante de espíritos",
-      "long_description": ""
+      "long_description": "",
+      "playbook": "Sussurro"
     },
     "HAMiLXn0uSMHWhwK": {
       "name": "Lewit",
-      "tokenName": "Jewit",
+      "tokenName": "Lewit",
       "description": "Casaca Azul",
-      "long_description": "Casaca Azul de posto raso."
+      "long_description": "Casaca Azul de posto raso.",
+      "faction": "Os Casacas Azuis"
     },
     "I31atP3bkNYwpNWs": {
       "name": "Laroze",
       "tokenName": "Laroze",
       "description": "Casaca Azul",
-      "long_description": ""
+      "long_description": "",
+      "crew": "Sombras"
     },
     "ILq3pmW1eP5Cmv5N": {
       "name": "Bazso Baz",
       "tokenName": "Bazso Baz",
       "description": "líder dos Lanternas Negras",
-      "long_description": "Líder dos Lanternas Negras. Ama uísque."
+      "long_description": "Líder dos Lanternas Negras. Ama uísque.",
+      "playbook": "Suave"
     },
     "JB5kuBYiG1WM68Jn": {
       "name": "Merrul Brime",
@@ -239,37 +270,43 @@
       "name": "Mercy",
       "tokenName": "Mercy",
       "description": "assassina fria",
-      "long_description": ""
+      "long_description": "",
+      "playbook": "Retalhador"
     },
     "LNRHhNkWokxfuAkd": {
       "name": "Adikin",
       "tokenName": "Adikin",
       "description": "ocultista",
-      "long_description": ""
+      "long_description": "",
+      "crew": "Culto"
     },
     "M5aVr5wpzVCs7Tla": {
       "name": "Decker",
       "tokenName": "Decker",
       "description": "anarquista",
-      "long_description": ""
+      "long_description": "",
+      "crew": "Contrabandistas"
     },
     "MKxJXmKpXjcC3m2N": {
       "name": "Adelaide Phroaig",
       "tokenName": "Adelaide Phroaig",
       "description": "nobre",
-      "long_description": ""
+      "long_description": "",
+      "crew": "Sombras"
     },
     "MNK1Z6n6uBxGuI0P": {
       "name": "Thomas",
       "tokenName": "Thomas",
       "description": "médico",
-      "long_description": ""
+      "long_description": "",
+      "crew": "Bravos"
     },
     "PB7HIiVRsSMA00GX": {
       "name": "Stazia",
       "tokenName": "Stazia",
       "description": "apotecária",
-      "long_description": ""
+      "long_description": "",
+      "playbook": "Doutor"
     },
     "Qrllp11M6C2Bt5v5": {
       "name": "Andris",
@@ -281,7 +318,8 @@
       "name": "Riven",
       "tokenName": "Riven",
       "description": "química",
-      "long_description": ""
+      "long_description": "",
+      "playbook": "Aranha"
     },
     "REa4y6EVchOVsTRU": {
       "name": "Levyra",
@@ -293,7 +331,8 @@
       "name": "Nyelle",
       "tokenName": "Nyelle",
       "description": "traficante de espíritos",
-      "long_description": ""
+      "long_description": "",
+      "crew": "Contrabandistas"
     },
     "RwX4a6msJzaqrfS7": {
       "name": "Laroze",
@@ -317,31 +356,36 @@
       "name": "Kira",
       "tokenName": "Kira",
       "description": "guarda-costas",
-      "long_description": ""
+      "long_description": "",
+      "playbook": "Vampiro"
     },
     "W4trwZmosVThWdOk": {
       "name": "Gagan",
       "tokenName": "Gagan",
       "description": "acadêmico",
-      "long_description": ""
+      "long_description": "",
+      "crew": "Culto"
     },
     "W5OEkmbwBKQpBbto": {
       "name": "Rutherford",
       "tokenName": "Rutherford",
       "description": "mordomo",
-      "long_description": ""
+      "long_description": "",
+      "playbook": "Vampiro"
     },
     "X3OBrpfnMMBKTpWp": {
       "name": "Fitz",
       "tokenName": "Fitz",
       "description": "colecionador",
-      "long_description": ""
+      "long_description": "",
+      "crew": "Sombras"
     },
     "YduTDcozzx1qNXx1": {
       "name": "Trev",
       "tokenName": "Trev",
       "description": "chefe de gangue",
-      "long_description": ""
+      "long_description": "",
+      "crew": "Assassinos"
     },
     "Yp4xdx8I7X272p8p": {
       "name": "Taffer",
@@ -377,37 +421,43 @@
       "name": "Melvir",
       "tokenName": "Melvir",
       "description": "médico",
-      "long_description": ""
+      "long_description": "",
+      "playbook": "Cão de Caça"
     },
     "cqMSaWVZMBJz8vTm": {
       "name": "Conway",
       "tokenName": "Conway",
       "description": "Casaca Azul",
-      "long_description": ""
+      "long_description": "",
+      "crew": "Bravos"
     },
     "dhjrdVoP5AhVRxjK": {
       "name": "Sera",
       "tokenName": "Sera",
       "description": "traficante de armas",
-      "long_description": ""
+      "long_description": "",
+      "crew": "Contrabandistas"
     },
     "eWNXot2ruOTUIJii": {
       "name": "Scurlock",
       "tokenName": "Scurlock",
       "description": "vampiro",
-      "long_description": ""
+      "long_description": "",
+      "playbook": "Sussurro"
     },
     "eqs0gysadnzyN7ob": {
       "name": "Rolan",
       "tokenName": "Rolan",
       "description": "traficante de drogas",
-      "long_description": ""
+      "long_description": "",
+      "crew": "Contrabandistas"
     },
     "fYqZyYPdnIquzGMy": {
       "name": "Esme",
       "tokenName": "Esme",
       "description": "dona de taverna",
-      "long_description": ""
+      "long_description": "",
+      "crew": "Contrabandistas"
     },
     "fgirUoJ2WjQxUztx": {
       "name": "Hoxan",
@@ -419,31 +469,36 @@
       "name": "Meg",
       "tokenName": "Meg",
       "description": "lutadora de arena",
-      "long_description": ""
+      "long_description": "",
+      "crew": "Bravos"
     },
     "gCKmHwBUDHPCJnwX": {
       "name": "Telda",
       "tokenName": "Telda",
       "description": "mendiga",
-      "long_description": ""
+      "long_description": "",
+      "playbook": "Furtivo"
     },
     "gJpfsbebbBNc6hHW": {
       "name": "Jeren",
       "tokenName": "Jeren",
       "description": "Casaca Azul arquivista",
-      "long_description": ""
+      "long_description": "",
+      "playbook": "Aranha"
     },
     "gZsYRwAscDkztlpF": {
       "name": "Salia",
       "tokenName": "Salia",
       "description": "negociante de informações",
-      "long_description": ""
+      "long_description": "",
+      "playbook": "Aranha"
     },
     "h2sERuS38m6M6RoO": {
       "name": "Steiner",
       "tokenName": "Steiner",
       "description": "assassino",
-      "long_description": ""
+      "long_description": "",
+      "playbook": "Cão de Caça"
     },
     "hOAMFYasdCU03dA9": {
       "name": "Mylera Klev",
@@ -455,7 +510,8 @@
       "name": "Rolan Wott",
       "tokenName": "Rolan Wott",
       "description": "juiz",
-      "long_description": ""
+      "long_description": "",
+      "crew": "Mascates"
     },
     "ilHqjIG9oIfitVqQ": {
       "name": "Belindra",
@@ -467,7 +523,8 @@
       "name": "Lydra",
       "tokenName": "Lydra",
       "description": "negociante de informações",
-      "long_description": ""
+      "long_description": "",
+      "crew": "Mascates"
     },
     "jfcG42HF8e03QbPe": {
       "name": "Lady Drake",
@@ -497,49 +554,57 @@
       "name": "Hutchins",
       "tokenName": "Hutchins",
       "description": "antiquário",
-      "long_description": ""
+      "long_description": "",
+      "crew": "Culto"
     },
     "nNjGWOnDjqIxrE9Z": {
       "name": "Lylandra",
       "tokenName": "Lylandra",
       "description": "consorte",
-      "long_description": ""
+      "long_description": "",
+      "playbook": "Vampiro"
     },
     "naVuCXYzVZ8gNPFS": {
       "name": "Eckerd",
       "tokenName": "Eckerd",
       "description": "ladrão de cadáveres",
-      "long_description": ""
+      "long_description": "",
+      "playbook": "Doutor"
     },
     "nkDUMJMJA2XVSw7Y": {
       "name": "Amancio",
       "tokenName": "Amancio",
       "description": "intermediário",
-      "long_description": ""
+      "long_description": "",
+      "crew": "Sombras"
     },
     "o4qeCfd3PbbPqTYg": {
       "name": "Hoxley",
       "tokenName": "Hoxley",
       "description": "contrabandista",
-      "long_description": ""
+      "long_description": "",
+      "crew": "Mascates"
     },
     "oIHOCivkkpgCPQON": {
       "name": "Exeter",
       "tokenName": "Exeter",
       "description": "Patrulheiro Espiritual",
-      "long_description": ""
+      "long_description": "",
+      "crew": "Assassinos"
     },
     "ovZxvDiN43mWXJ5S": {
       "name": "Sawtooth",
       "tokenName": "Sawtooth",
       "description": "médico",
-      "long_description": ""
+      "long_description": "",
+      "playbook": "Retalhador"
     },
     "q0jvrMosQ0RWGPFq": {
       "name": "Celene",
       "tokenName": "Celene",
       "description": "sentinela",
-      "long_description": ""
+      "long_description": "",
+      "playbook": "Cão de Caça"
     },
     "q8ii3If0HqBwkEvA": {
       "name": "Lannic",
@@ -551,7 +616,8 @@
       "name": "Irimina",
       "tokenName": "Irimina",
       "description": "nobre cruel",
-      "long_description": ""
+      "long_description": "",
+      "crew": "Assassinos"
     },
     "rcvTVk6tSI0qVWzL": {
       "name": "A Torre",
@@ -563,13 +629,15 @@
       "name": "Veleris",
       "tokenName": "Veleris",
       "description": "espiã",
-      "long_description": ""
+      "long_description": "",
+      "playbook": "Cão de Caça"
     },
     "u3fzAfPNzr63bagc": {
       "name": "Frake",
       "tokenName": "Frake",
       "description": "chaveiro",
-      "long_description": ""
+      "long_description": "",
+      "playbook": "Furtivo"
     },
     "u9HiZdG7fnbyV6zP": {
       "name": "Casslyn Mora",
@@ -581,13 +649,15 @@
       "name": "Edrik",
       "tokenName": "Edrik",
       "description": "emissário",
-      "long_description": ""
+      "long_description": "",
+      "playbook": "Vampiro"
     },
     "uoZc1jHjWkoiakVb": {
       "name": "Mateas Kline",
       "tokenName": "Mateas Kline",
       "description": "nobre",
-      "long_description": ""
+      "long_description": "",
+      "crew": "Culto"
     },
     "vQ3FlOJzCMnYvjT8": {
       "name": "Lydra",
@@ -605,31 +675,36 @@
       "name": "Bennett",
       "tokenName": "Bennett",
       "description": "astrônomo",
-      "long_description": ""
+      "long_description": "",
+      "crew": "Culto"
     },
     "x1cYr44EmfRgEV8s": {
       "name": "Rigney",
       "tokenName": "Rigney",
       "description": "dono de taverna",
-      "long_description": ""
+      "long_description": "",
+      "crew": "Sombras"
     },
     "xADDGHYtviNBg1Bh": {
       "name": "Petra",
       "tokenName": "Petra",
       "description": "funcionária da prefeitura",
-      "long_description": ""
+      "long_description": "",
+      "playbook": "Furtivo"
     },
     "yDAiIcche7dJvGR1": {
       "name": "Karlos",
       "tokenName": "Karlos",
       "description": "caçador de recompensas",
-      "long_description": ""
+      "long_description": "",
+      "crew": "Assassinos"
     },
     "yR1mWS2oIa1zhx1d": {
       "name": "Quellyn",
       "tokenName": "Quellyn",
       "description": "perita em bruxaria",
-      "long_description": ""
+      "long_description": "",
+      "playbook": "Sussurro"
     },
     "yxUUWgO2ppFU9JYG": {
       "name": "Nyryx",
@@ -641,13 +716,15 @@
       "name": "Darmot",
       "tokenName": "Darmot",
       "description": "Casaca Azul",
-      "long_description": ""
+      "long_description": "",
+      "playbook": "Furtivo"
     },
     "zRJxO6q9gpWdt1gM": {
       "name": "Casta",
       "tokenName": "Casta",
       "description": "caçadora de recompensas",
-      "long_description": ""
+      "long_description": "",
+      "playbook": "Cão de Caça"
     }
   }
 }

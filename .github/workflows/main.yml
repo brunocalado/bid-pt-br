@@ -1,8 +1,128 @@
-            - name: Zip Release
-  # You may pin to the exact commit or the version.
-  # uses: TheDoctor0/zip-release@b57d897cb5d60cb78b51a507f63fa184cfe35554
-  uses: TheDoctor0/zip-release@0.7.6
-  with:
-    filename: bid-pt-br.zip
-    exclusions: [.gitignore, .gitattributes]
-    recursive_exclusions: [.github, .git]
+# CI/CD pipeline for bid-pt-br FoundryVTT translation module.
+# Triggered on tag push (v*). Patches module.json, creates release zip,
+# publishes GitHub Release, notifies FoundryVTT Package API, and commits
+# updated module.json back to main.
+#
+# Required secrets:
+#   FOUNDRYVTT_TOKEN - Package token from foundryvtt.com
+
+name: Release Module
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Extract version from tag
+        run: |
+          TAG_NAME=${GITHUB_REF#refs/tags/}
+          VERSION=${TAG_NAME#v}
+          echo "TAG_NAME=$TAG_NAME" >> $GITHUB_ENV
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+          echo "Releasing version $VERSION (tag: $TAG_NAME)"
+
+      - name: Patch module.json
+        run: |
+          jq --arg ver "$VERSION" \
+             --arg dl "https://github.com/brunocalado/bid-pt-br/releases/download/$TAG_NAME/bid-pt-br.zip" \
+             '.version = $ver | .download = $dl' module.json > module.json.tmp
+          mv module.json.tmp module.json
+          echo "Patched module.json:"
+          jq '{ version, download, manifest }' module.json
+
+      - name: Create release zip
+        run: |
+          STAGING_DIR=$(mktemp -d)
+          mkdir -p "$STAGING_DIR/bid-pt-br"
+          rsync -a \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='.gitignore' \
+            --exclude='.gitattributes' \
+            --exclude='.claude' \
+            . "$STAGING_DIR/bid-pt-br/"
+          cd "$STAGING_DIR"
+          zip -r "$GITHUB_WORKSPACE/bid-pt-br.zip" bid-pt-br/
+          echo "Zip contents:"
+          unzip -l "$GITHUB_WORKSPACE/bid-pt-br.zip" | head -30
+
+      - name: Commit module.json to main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add module.json
+          git diff --cached --quiet && echo "No changes to commit" && exit 0
+          git commit -m "chore: update module.json to version $VERSION [skip ci]"
+          git push origin main
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ env.TAG_NAME }}
+          name: Release ${{ env.VERSION }}
+          body: |
+            Release version ${{ env.VERSION }} of Blades in the Dark - Portugues (Brasil) translation module.
+          files: |
+            bid-pt-br.zip
+            module.json
+          draft: false
+          prerelease: false
+
+      - name: Notify FoundryVTT Package API
+        env:
+          FOUNDRYVTT_TOKEN: ${{ secrets.FOUNDRYVTT_TOKEN }}
+        run: |
+          COMPAT_MIN=$(jq -r '.compatibility.minimum' module.json)
+          COMPAT_VERIFIED=$(jq -r '.compatibility.verified' module.json)
+          COMPAT_MAX=$(jq -r '.compatibility.maximum // empty' module.json)
+
+          COMPAT_JSON=$(jq -n \
+            --arg min "$COMPAT_MIN" \
+            --arg ver "$COMPAT_VERIFIED" \
+            --arg max "$COMPAT_MAX" \
+            '{minimum: $min, verified: $ver} + (if $max != "" then {maximum: $max} else {} end)')
+
+          REQUEST_JSON=$(jq -n \
+            --arg id "bid-pt-br" \
+            --arg version "$VERSION" \
+            --arg manifest "https://github.com/brunocalado/bid-pt-br/releases/download/$TAG_NAME/module.json" \
+            --arg notes "https://github.com/brunocalado/bid-pt-br/releases/tag/$TAG_NAME" \
+            --argjson compat "$COMPAT_JSON" \
+            '{
+              id: $id,
+              release: {
+                version: $version,
+                manifest: $manifest,
+                notes: $notes,
+                compatibility: $compat
+              }
+            }')
+
+          echo "API Request:"
+          echo "$REQUEST_JSON" | jq .
+
+          HTTP_CODE=$(curl -s -o response.json -w "%{http_code}" \
+            -X POST "https://foundryvtt.com/_api/packages/release_version/" \
+            -H "Content-Type: application/json" \
+            -H "Authorization: $FOUNDRYVTT_TOKEN" \
+            -d "$REQUEST_JSON")
+
+          echo "HTTP Response Code: $HTTP_CODE"
+          cat response.json
+
+          if [ "$HTTP_CODE" != "200" ]; then
+            echo "::error::FoundryVTT API returned HTTP $HTTP_CODE"
+            exit 1
+          fi

@@ -2,7 +2,7 @@
   "id": "bid-pt-br",
   "title": "Blades in the Dark - Português (Brasil)",
   "description": "",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "authors": [
     {
       "name": "Mestre Digital",
@@ -22,7 +22,7 @@
   ],
   "url": "https://github.com/brunocalado/bid-pt-br",
   "manifest": "https://raw.githubusercontent.com/brunocalado/bid-pt-br/main/module.json",
-  "download": "https://github.com/brunocalado/bid-pt-br/releases/download/v0.3.0/bid-pt-br.zip",
+  "download": "https://github.com/brunocalado/bid-pt-br/releases/download/v0.3.1/bid-pt-br.zip",
   "languages": [
     {
       "lang": "pt-BR",
